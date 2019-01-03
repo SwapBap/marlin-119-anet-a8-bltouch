@@ -9,13 +9,12 @@ This version is modified to work with the my specific ANet A8 which has a bltouc
 ## Setup Instructions
 
 Physical Install
------------------------------
 
 1. Mount and wire as per mount design and wiring diagram.
 
 Firmware Upgrade
+
 The code in this repo has already had these steps applied, but steps 9/10 you will have to do again.
------------------------------
 
 	1. Download the Marlin firmware from marlinfw.org. 1.1.9 is production ready.
 	2. Copy the A8 Config over from the config examples folder.
@@ -33,7 +32,7 @@ The code in this repo has already had these steps applied, but steps 9/10 you wi
 	14. Upload firmware!
 	15. Open up the serial terminal in Arduino. ( Baud should be 115200 )
 	16. Run G-Code 502 then 500 to reset defaults in EEPROM.
- 17. Run bed leveling from printer GUI.
+        17. Run bed leveling from printer GUI.
 
 ## Marlin 1.1
 
