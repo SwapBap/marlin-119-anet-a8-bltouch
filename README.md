@@ -33,6 +33,30 @@ The code in this repo has already had these steps applied, but steps 9/10 you wi
 	15. Open up the serial terminal in Arduino. ( Baud should be 115200 )
 	16. Run G-Code 502 then 500 to reset defaults in EEPROM
 	17. Run bed leveling from printer GUI.
+	
+### Setting up the Z-Offset ###
+
+Currently our Z0 is set too high as is the default for probe based leveling. To fix this we need to adjust our Z-Offset using some measurements and G-Code.
+
+1. Open Pronterface or any serial application to feed in G-Code commands.
+2. G28 - Home the printer
+3. M851 Z0 - Reset z offset
+4. M500 - Store eeprom settings
+5. M501 - Activate eeprom settings
+6. M503 - Check active esttings
+7. G28 Z - Home just Z
+8. G1 F60 Z0 - Move to zero z-offset
+9. M21 1 S0 - Remove soft endstop so we can go lower.
+10. Put piece of paper under nozzle, then move nozzle down using pronterface interface or G-Code until paper is pinched but can still move somewhat.
+11. Look at Z on printer screen, record it.
+12. Your new Z-offset is Z-0.01 ( Width of paper )
+13. M851 Z X.XX - Set Z offset
+14. M211 S1 - Re enable soft endstops
+15. M500 - Save EEprom
+16. M501 - Activate eeprom settings
+17. M503 - check settings
+18. G28 - Home
+19. G1 F60 Z0 - Should be true z 0 now.
 
 ## Marlin 1.1
 
