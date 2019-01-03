@@ -6,6 +6,35 @@ This version is modified to work with the my specific ANet A8 which has a bltouc
 
 [Mount I used](https://www.thingiverse.com/thing:1846913)
 
+## Setup Instructions
+
+Physical Install
+-----------------------------
+
+1. Mount and wire as per mount design and wiring diagram.
+
+Firmware Upgrade
+The code in this repo has already had these steps applied, but steps 9/10 you will have to do again.
+-----------------------------
+
+	1. Download the Marlin firmware from marlinfw.org. 1.1.9 is production ready.
+	2. Copy the A8 Config over from the config examples folder.
+	3. http://github.com/Skynet3D/anet-board and download the board files into the arduino libraries. (Documents/Arduino/libraries )
+	4. Open up the Arduino IDE
+	5. Go into Arduino IDE and pick a8 board ( NOT optiboot ).
+	6. Open the marlin.ino in the marlin firmware folder.
+	7. Navigate to Configuration.h.
+	8. Find //#define BLTOUCH, uncomment, below it add#define SERVO0_PIN 27
+	9. Find "x_probe"
+	10. Following the diagram, measure the offsets and put them in as provided. For X/Y I used a piece of paper and marked out the points. For Z I used credit cards as shims.
+	11. Uncomment Z_SAFE_HOMING to enable.
+	12. Z_MIN_PROBE_ENDSTOP_INVERTING from true to false
+	13. #define AUTO_BED_LEVEL_BILINEAR
+	14. Upload firmware!
+	15. Open up the serial terminal in Arduino. ( Baud should be 115200 )
+	16. Run G-Code 502 then 500 to reset defaults in EEPROM.
+ 17. Run bed leveling from printer GUI.
+
 ## Marlin 1.1
 
 Marlin 1.1 represents an evolutionary leap over Marlin 1.0.2. It is the result of over two years of effort by several volunteers around the world who have paid meticulous and sometimes obsessive attention to every detail. For this release we focused on code quality, performance, stability, and overall user experience. Several new features have also been added, many of which require no extra hardware.
