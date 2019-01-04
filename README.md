@@ -12,27 +12,27 @@ Physical Install
 
 1. Mount and wire as per mount design and wiring diagram.
 
-Firmware Upgrade
+### Firmware Upgrade###
 
 The code in this repo has already had these steps applied, but steps 9/10 you will have to do again.
 
-	1. Download the Marlin firmware from marlinfw.org. 1.1.9 is production ready.
-	2. Copy the A8 Config over from the config examples folder.
-	3. http://github.com/Skynet3D/anet-board and download the board files into the arduino libraries. (Documents/Arduino/libraries )
-	4. Open up the Arduino IDE
-	5. Go into Arduino IDE and pick a8 board ( NOT optiboot ).
-	6. Open the marlin.ino in the marlin firmware folder.
-	7. Navigate to Configuration.h.
-	8. Find //#define BLTOUCH, uncomment, below it add#define SERVO0_PIN 27
-	9. Find "x_probe"
-	10. Following the diagram, measure the offsets and put them in as provided. For X/Y I used a piece of paper and marked out the points. For Z I used credit cards as shims.
-	11. Uncomment Z_SAFE_HOMING to enable.
-	12. Z_MIN_PROBE_ENDSTOP_INVERTING from true to false
-	13. #define AUTO_BED_LEVEL_BILINEAR
-	14. Upload firmware!
-	15. Open up the serial terminal in Arduino. ( Baud should be 115200 )
-	16. Run G-Code 502 then 500 to reset defaults in EEPROM
-	17. Run bed leveling from printer GUI.
+1. Download the Marlin firmware from marlinfw.org. 1.1.9 is production ready.
+2. Copy the A8 Config over from the config examples folder.
+3. http://github.com/Skynet3D/anet-board and download the board files into the arduino libraries. (Documents/Arduino/libraries )
+4. Open up the Arduino IDE
+5. Go into Arduino IDE and pick a8 board ( NOT optiboot ).
+6. Open the marlin.ino in the marlin firmware folder.
+7. Navigate to Configuration.h.
+8. Find //#define BLTOUCH, uncomment, below it add#define SERVO0_PIN 27
+9. Find "x_probe"
+10. Following the diagram, measure the offsets and put them in as provided. For X/Y I used a piece of paper and marked out the points. For Z I used credit cards as shims.
+11. Uncomment Z_SAFE_HOMING to enable.
+12. Z_MIN_PROBE_ENDSTOP_INVERTING from true to false
+13. #define AUTO_BED_LEVEL_BILINEAR
+14. Upload firmware!
+15. Open up the serial terminal in Arduino. ( Baud should be 115200 )
+16. Run G-Code 502 then 500 to reset defaults in EEPROM
+17. Run bed leveling from printer GUI.
 	
 ### Setting up the Z-Offset ###
 
@@ -46,7 +46,7 @@ Currently our Z0 is set too high as is the default for probe based leveling. To 
 6. M503 - Check active esttings
 7. G28 Z - Home just Z
 8. G1 F60 Z0 - Move to zero z-offset
-9. M21 1 S0 - Remove soft endstop so we can go lower.
+9. M211 S0 - Remove soft endstop so we can go lower.
 10. Put piece of paper under nozzle, then move nozzle down using pronterface interface or G-Code until paper is pinched but can still move somewhat.
 11. Look at Z on printer screen, record it.
 12. Your new Z-offset is Z-0.01 ( Width of paper )
@@ -57,6 +57,18 @@ Currently our Z0 is set too high as is the default for probe based leveling. To 
 17. M503 - check settings
 18. G28 - Home
 19. G1 F60 Z0 - Should be true z 0 now.
+
+### Installing Bed Mosfet ###
+1. Unplug power and check to make sure main power line is discharged.
+2. Unplug main power from board, plug into MOSFET DC In.
+3. Insert second set of ties into DC In and run that to the board power in.
+4. Unplug hot bed power out cables and plug them into MOSFet power out.
+5. Plug in JST connector end into MOSFET board.
+6. Plug bare end of JST wire into hot bed power out. It will use this signal for control only.
+NOTE: Polarity of the control/JST wire is only important if your MOSFET module doesn't have a rectifier on it.
+7. Double check your cabling!
+8. DONE
+
 
 ## Marlin 1.1
 
