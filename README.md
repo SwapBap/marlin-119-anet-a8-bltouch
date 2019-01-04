@@ -12,7 +12,7 @@ Physical Install
 
 1. Mount and wire as per mount design and wiring diagram.
 
-### Firmware Upgrade###
+### Firmware Upgrade ###
 
 The code in this repo has already had these steps applied, but steps 9/10 you will have to do again.
 
