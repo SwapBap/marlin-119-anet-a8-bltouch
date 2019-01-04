@@ -6,6 +6,8 @@ This version is modified to work with the my specific ANet A8 which has a bltouc
 
 [Mount I used](https://www.thingiverse.com/thing:1846913)
 
+[Mosfets Used](https://www.amazon.com/gp/product/B07478M473/ref=ppx_yo_dt_b_detailpage_o01_s01?ie=UTF8&psc=1)
+
 ## Setup Instructions
 
 Physical Install
