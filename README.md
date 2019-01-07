@@ -71,6 +71,14 @@ NOTE: Polarity of the control/JST wire is only important if your MOSFET module d
 7. Double check your cabling!
 8. DONE
 
+### Slicer Settings ###
+If we don't enable auto bed leveling in our startup g-code, all is for naught! Here's how we do that.
+1. Go into slicer's start code. This is usually in printer settings.
+2. After the G28 commands:
+3. G29; auto level bed
+4. M420 S1; enable auto level!
+5. Save and you're all set.
+
 
 ## Marlin 1.1
 
