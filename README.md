@@ -4,9 +4,13 @@ This version is modified to work with the my specific ANet A8 which has a bltouc
 
 [BLTouch Sensor on AliExpress](https://www.aliexpress.com/item/Hot-Auto-Leveling-Sensor-3D-Touch-for-3D-Printer-Improve-Printing-Precision-Auto-Bed-Leveling-Touch/32785161882.html?spm=2114.search0104.3.8.67f23d88iyfQoy&ws_ab_test=searchweb0_0,searchweb201602_5_10065_10130_10068_10890_10547_319_10546_317_10548_10545_10696_453_10084_454_10083_10618_10307_537_536_10059_10884_10887_100031_321_322_10103,searchweb201603_52,ppcSwitch_0&algo_expid=c7c4adf5-aece-49ea-8433-66bf31560e1c-1&algo_pvid=c7c4adf5-aece-49ea-8433-66bf31560e1c)
 
+[BLTouch Details PDF](https://docs.wixstatic.com/ugd/f5a1c8_d261d68b7b034a29bdfc5aaebe882983.pdf)
+
 [Mount I used](https://www.thingiverse.com/thing:1846913)
 
 [Mosfets Used](https://www.amazon.com/gp/product/B07478M473/ref=ppx_yo_dt_b_detailpage_o01_s01?ie=UTF8&psc=1)
+
+
 
 ## Setup Instructions
 
